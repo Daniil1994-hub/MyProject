@@ -4,11 +4,11 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.cfg.Environment;
 
+
 import java.util.Properties;
 
 public class Util {
     private static SessionFactory sessionFactory; // КЛАСС КОТОРЫЙ СОЗДАЕТ СОЕДИНЕНИЕ "ФАБРИКА СОЕДИНЕНИЯ"
-
     public static SessionFactory getSessionFactory() {
         if (sessionFactory == null) {
             try {

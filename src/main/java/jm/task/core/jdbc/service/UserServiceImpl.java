@@ -3,16 +3,13 @@ package jm.task.core.jdbc.service;
 import jm.task.core.jdbc.dao.UserDaoJDBCImpl;
 import jm.task.core.jdbc.model.User;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import java.util.ArrayList;
+
 import java.util.List;
 
 public class UserServiceImpl implements UserService {
     private UserDaoJDBCImpl userDaoJDBC;
-    public UserServiceImpl () {
+
+    public UserServiceImpl() {
         this.userDaoJDBC = new UserDaoJDBCImpl();
     }
 
@@ -36,6 +33,7 @@ public class UserServiceImpl implements UserService {
         List<User> list = userDaoJDBC.getAllUsers();
         return list;
     }
+
     public void cleanUsersTable() {
         userDaoJDBC.cleanUsersTable();
     }
