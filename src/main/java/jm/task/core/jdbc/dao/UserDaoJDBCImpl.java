@@ -71,7 +71,7 @@ public class UserDaoJDBCImpl implements UserDao {
         System.out.println(sqlCommand);
         try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/sys", "root", "test")) {
             Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery(sqlCommand);
+            ResultSet resultSet = statement.executeQuery(sqlCommand); // резалтсет хранит данные таблицы полученные благодаря комманде селект фром юзерс
             while(resultSet.next()) {
                 int id = resultSet.getInt("id");
                 String name = resultSet.getString("name");
