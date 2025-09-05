@@ -1,6 +1,7 @@
 package jm.task.core.jdbc;
 
 import jm.task.core.jdbc.service.UserServiceImpl;
+import jm.task.core.jdbc.util.Util;
 
 import java.sql.SQLException;
 
@@ -15,6 +16,7 @@ public class Main {
         userServiceImpl.getAllUsers();
         userServiceImpl.cleanUsersTable();
         userServiceImpl.dropUsersTable();
+        Util.closeConnection();
 
     }
 
