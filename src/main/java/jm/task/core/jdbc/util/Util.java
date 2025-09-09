@@ -7,9 +7,11 @@ import java.sql.SQLException;
 public class Util {
     private static Connection connection = null;
     private static final String URL = "jdbc:mysql://localhost:3306/sys";
-    private static final String USERNAME = "root";
+    private static String USERNAME = "root";
     private static final String PASSWORD = "test";
 
+
+    private Util (){}
 
     public static Connection getConnection() throws SQLException {
         if (connection == null || connection.isClosed()) {
