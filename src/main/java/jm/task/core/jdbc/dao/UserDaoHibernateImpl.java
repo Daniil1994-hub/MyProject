@@ -99,9 +99,6 @@ public class UserDaoHibernateImpl implements UserDao {
             query.executeUpdate();
             transaction.commit();
         } catch (Exception e) {
-            if (sessionFactory.getCurrentSession().getTransaction().isActive()) {
-                sessionFactory.getCurrentSession().getTransaction().rollback();
-            }
             e.printStackTrace();
         }
     }
