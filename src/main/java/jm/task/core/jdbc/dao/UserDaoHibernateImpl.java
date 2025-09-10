@@ -11,7 +11,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class UserDaoHibernateImpl implements UserDao {
-    SessionFactory sessionFactory = Util.getSessionFactory();
+     private SessionFactory sessionFactory = Util.getSessionFactory();
 
     public UserDaoHibernateImpl() {
 
@@ -30,9 +30,6 @@ public class UserDaoHibernateImpl implements UserDao {
             query.executeUpdate();
             transaction.commit();
         } catch (Exception e) {
-            if (sessionFactory.getCurrentSession().getTransaction().isActive()) {
-                sessionFactory.getCurrentSession().getTransaction().rollback();
-            }
             e.printStackTrace();
         }
     }
@@ -45,9 +42,6 @@ public class UserDaoHibernateImpl implements UserDao {
             query.executeUpdate();
             transaction.commit();
         } catch (Exception e) {
-            if (sessionFactory.getCurrentSession().getTransaction().isActive()) {
-                sessionFactory.getCurrentSession().getTransaction().rollback();
-            }
             e.printStackTrace();
         }
 

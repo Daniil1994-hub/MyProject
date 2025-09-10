@@ -18,7 +18,7 @@ public class Main {
         userServiceImpl.getAllUsers();
         userServiceImpl.cleanUsersTable();
         userServiceImpl.dropUsersTable();
-        Util.closeConnection();
+        Util.shutdown();
 
     }
 
